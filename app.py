@@ -17,6 +17,10 @@ def updatePlugins():
     zipf.close()
     return send_file("plugins.zip")
 
+@app.route('/docs/<string:doc>')
+def func_name(doc):
+    return render_template('expression')
+
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8000, debug=True)
  
