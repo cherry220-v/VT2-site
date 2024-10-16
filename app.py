@@ -14,6 +14,8 @@ def updatePlugins():
     zipf = zipfile.ZipFile("plugins.zip", "w")
     for f in os.listdir("plugins"):
         zipf.write(os.path.join("plugins", f))
+    for t in os.listdir("themes"):
+        zipf.write(os.path.join("themes", t))
     zipf.close()
     return send_file("plugins.zip")
 
